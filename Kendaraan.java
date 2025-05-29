@@ -10,6 +10,6 @@ public class Kendaraan{
     }
 
     public void tampilkanInformasi(){
-        System.out.println("Plat Nomor : " + platNomor +"/tJenis Kendaraan : " + tipe + "/tMerk : " + merk);
+        System.out.printf("Plat Nomor : " + platNomor +" | \tJenis Kendaraan : " + tipe + " | \tMerk : " + merk);
     }
 }
