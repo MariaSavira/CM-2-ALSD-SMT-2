@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class SPBU {
     public static void main(String[] args) {
         DataKendaraan data = new DataKendaraan();
+        queuekendaraan queue = new queuekendaraan(100);
         Scanner sc = new Scanner(System.in);
 
         boolean ulang = true;
@@ -37,7 +38,35 @@ public class SPBU {
                     System.out.println("\nAntrian saat ini : " + data.getJumlah());
                     break;
                 case 4:
+                    if (data.apaKosong()) {
+                        System.out.println("\nTidak ada kendaraan dalam antrian.");
+                    } else {
+                       
+                        Kendaraan kendaraanDiproses = data.head.kendaraan;
+                     
+                        System.out.println("\nPetugas melayani kendaraan " + kendaraanDiproses.platNomor);
+
+                        System.out.print("Masukkan Jenis BBM (Pertalite, Pertamax, Solar): ");
+                        String jenisBBM = sc.nextLine();
+                        System.out.print("Masukkan Harga per Liter: Rp ");
+                        double hargaPerLiter = sc.nextDouble();
+                        System.out.print("Masukkan Jumlah Liter: ");
+                        double liter = sc.nextDouble();
+                        sc.nextLine();  
+
+                        BBM bbm = new BBM(jenisBBM, hargaPerLiter);
+                        TransaksiPengisian transaksi = new TransaksiPengisian(kendaraanDiproses, bbm, liter);
+                        
+                        queue.enqueue(transaksi);
+                        data.head = data.head.next;
+                        data.jml--;
+
+                        System.out.println("\nTransaksi berhasil dicatat.");
+                    }
+                    break;
                 case 5:
+                    queue.tampilkanriwayat();
+                    break;
                 case 0:
                     ulang = false;
                 default:
