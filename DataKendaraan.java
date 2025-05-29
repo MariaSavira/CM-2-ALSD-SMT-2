@@ -41,4 +41,5 @@ public class DataKendaraan {
     public int getJumlah(){
         return jml;
     }
+    
 }
