@@ -4,6 +4,9 @@ public class queuekendaraan {
     public int rear;
     public int size;
     public int capacity;
+    public int pertalite;
+    public int solar;
+    public int pertamax;
 
     public queuekendaraan(int capacity) {
         this.capacity = capacity;
@@ -11,6 +14,9 @@ public class queuekendaraan {
         this.front = 0;
         this.rear = -1; 
         this.size = 0;
+        this.pertalite = 0;
+        this.solar = 0;
+        this.pertamax = 0;
     }
     public boolean isEmpty() {
         return size == 0;
@@ -25,6 +31,9 @@ public class queuekendaraan {
         }
         rear = (rear + 1) % capacity;
         data[rear] = transaksi;
+        if (data.bbm.namaBBM[rear].equalsIgnoreCase("Pertalite")){
+            pertalite++;
+        } else if (data.bb)
         size++;
     }
     public TransaksiPengisian dequeue() {
