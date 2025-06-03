@@ -65,6 +65,10 @@ public class SPBU {
                     break;
                 case 5:
                     queue.tampilkanriwayat();
+                    System.out.println("\nTotal BBM yang sudah dibeli :");
+                    System.out.println("Pertalite : ");
+                    System.out.println("Pertamax : ");
+                    System.out.println("Solar : ");
                     break;
                 case 0:
                     ulang = false;
