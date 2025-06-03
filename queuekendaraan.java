@@ -31,7 +31,7 @@ public class queuekendaraan {
         }
         rear = (rear + 1) % capacity;
         data[rear] = transaksi;
-        if (data.bbm.namaBBM[rear].equalsIgnoreCase("Pertalite")){
+        if (transaksi.bbm.namaBBM[rear].equalsIgnoreCase("Pertalite")){
             pertalite++;
         } else if (data.bb)
         size++;
