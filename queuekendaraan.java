@@ -31,9 +31,13 @@ public class queuekendaraan {
         }
         rear = (rear + 1) % capacity;
         data[rear] = transaksi;
-        if (data.bbm.namaBBM[rear].equalsIgnoreCase("Pertalite")){
-            pertalite++;
-        } else if (data.bb)
+                if (data[rear].bbm.namaBBM.equalsIgnoreCase("Pertalite")){
+            pertalite += data[rear].liter;
+        } else if (data[rear].bbm.namaBBM.equalsIgnoreCase("Solar")){
+            solar += data[rear].liter;
+        } else if (data[rear].bbm.namaBBM.equalsIgnoreCase("Pertamax")){
+            pertamax += data[rear].liter;
+        }
         size++;
     }
    
