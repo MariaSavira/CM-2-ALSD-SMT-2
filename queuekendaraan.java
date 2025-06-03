@@ -36,16 +36,7 @@ public class queuekendaraan {
         } else if (data.bb)
         size++;
     }
-    public TransaksiPengisian dequeue() {
-        if (isEmpty()) {
-            System.out.println("Antrian kosong, tidak ada transaksi untuk diambil.");
-            return null;
-        }
-        TransaksiPengisian transaksi = data[front];
-        front = (front + 1) % capacity;
-        size--;
-        return transaksi;
-    }
+   
     public void tampilkanriwayat() {
         if (isEmpty()) {
             System.out.println("Antrian kosong, tidak ada riwayat transaksi.");
