@@ -31,21 +31,12 @@ public class queuekendaraan {
         }
         rear = (rear + 1) % capacity;
         data[rear] = transaksi;
-        if (transaksi.bbm.namaBBM[rear].equalsIgnoreCase("Pertalite")){
-            pertalite++;
+        if (data[rear].bbm.namaBBM.equalsIgnoreCase("Pertalite")){
+            pertalite += data[rear].liter;
         } else if (data.bb)
         size++;
     }
-    public TransaksiPengisian dequeue() {
-        if (isEmpty()) {
-            System.out.println("Antrian kosong, tidak ada transaksi untuk diambil.");
-            return null;
-        }
-        TransaksiPengisian transaksi = data[front];
-        front = (front + 1) % capacity;
-        size--;
-        return transaksi;
-    }
+   
     public void tampilkanriwayat() {
         if (isEmpty()) {
             System.out.println("Antrian kosong, tidak ada riwayat transaksi.");

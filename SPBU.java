@@ -43,7 +43,6 @@ public class SPBU {
                     } else {
                        
                         Kendaraan kendaraanDiproses = data.head.kendaraan;
-                     
                         System.out.println("\nPetugas melayani kendaraan " + kendaraanDiproses.platNomor);
 
                         System.out.print("Masukkan Jenis BBM (Pertalite, Pertamax, Solar): ");
