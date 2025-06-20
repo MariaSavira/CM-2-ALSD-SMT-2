@@ -1,4 +1,4 @@
-public class queuekendaraan {
+public class QueueKendaraan {
     public TransaksiPengisian[] data;
     public int front;
     public int rear;
@@ -8,7 +8,7 @@ public class queuekendaraan {
     public int solar;
     public int pertamax;
 
-    public queuekendaraan(int capacity) {
+    public QueueKendaraan(int capacity) {
         this.capacity = capacity;
         this.data = new TransaksiPengisian[capacity];
         this.front = 0;
@@ -31,12 +31,16 @@ public class queuekendaraan {
         }
         rear = (rear + 1) % capacity;
         data[rear] = transaksi;
-        if (data[rear].bbm.namaBBM.equalsIgnoreCase("Pertalite")){
+                if (data[rear].bbm.namaBBM.equalsIgnoreCase("Pertalite")){
             pertalite += data[rear].liter;
-        } else if (data.bb)
+        } else if (data[rear].bbm.namaBBM.equalsIgnoreCase("Solar")){
+            solar += data[rear].liter;
+        } else if (data[rear].bbm.namaBBM.equalsIgnoreCase("Pertamax")){
+            pertamax += data[rear].liter;
+        }
         size++;
     }
-   
+    
     public void tampilkanriwayat() {
         if (isEmpty()) {
             System.out.println("Antrian kosong, tidak ada riwayat transaksi.");

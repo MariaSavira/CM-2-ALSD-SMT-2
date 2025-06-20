@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class SPBU {
     public static void main(String[] args) {
         DataKendaraan data = new DataKendaraan();
-        queuekendaraan queue = new queuekendaraan(100);
+        QueueKendaraan queue = new QueueKendaraan(100);
         Scanner sc = new Scanner(System.in);
 
         boolean ulang = true;
-        while (ulang){
+        while (ulang) {
             System.out.println("\n--- Menu SPBU ---");
             System.out.println("1. Tambah Antrian Kendaraan");
             System.out.println("2. Tampilkan Antrian");
@@ -19,7 +19,7 @@ public class SPBU {
             int pilih = sc.nextInt();
             sc.nextLine();
 
-            switch(pilih){
+            switch (pilih) {
                 case 1:
                     System.out.print("\nMasukkan Plat Nomor : ");
                     String platNomor = sc.nextLine();
@@ -41,7 +41,7 @@ public class SPBU {
                     if (data.apaKosong()) {
                         System.out.println("\nTidak ada kendaraan dalam antrian.");
                     } else {
-                       
+
                         Kendaraan kendaraanDiproses = data.head.kendaraan;
                         System.out.println("\nPetugas melayani kendaraan " + kendaraanDiproses.platNomor);
 
@@ -51,11 +51,11 @@ public class SPBU {
                         double hargaPerLiter = sc.nextDouble();
                         System.out.print("Masukkan Jumlah Liter: ");
                         double liter = sc.nextDouble();
-                        sc.nextLine();  
+                        sc.nextLine();
 
                         BBM bbm = new BBM(jenisBBM, hargaPerLiter);
                         TransaksiPengisian transaksi = new TransaksiPengisian(kendaraanDiproses, bbm, liter);
-                        
+
                         queue.enqueue(transaksi);
                         data.head = data.head.next;
                         data.jml--;
@@ -65,17 +65,17 @@ public class SPBU {
                     break;
                 case 5:
                     queue.tampilkanriwayat();
-                    System.out.println("\nTotal BBM yang sudah dibeli :");
-                    System.out.println("Pertalite : ");
-                    System.out.println("Pertamax : ");
-                    System.out.println("Solar : ");
+                    System.out.println("\nTotal BBM yang sudah dibeli (liter) :");
+                    System.out.println("Pertalite : " + queue.pertalite);
+                    System.out.println("Pertamax : " + queue.pertamax);
+                    System.out.println("Solar : " + queue.solar);
                     break;
                 case 0:
                     ulang = false;
                 default:
                     System.out.println("\nTolong pilih yang benar.");
             }
-        } 
+        }
         System.out.println("\nTerimakasih!");
     }
 }
